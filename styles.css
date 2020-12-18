@@ -1,0 +1,35 @@
+.sidebar {
+    height: 100%;
+    width: 30%;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #303030;
+    overflow-x: hidden;
+    padding-top: 20px;
+    vertical-align: bottom;
+}
+
+.sidebar img {
+    width:75%;
+    border-radius: 50%;
+    border: 5px solid #a7a7a7;
+}
+
+.fake-h4 {
+    font-style: italic;
+    color: #5b5b5b;
+}
+
+/* for links to not be in blue */
+a {
+    color: #a7a7a7;
+    text-decoration: none;
+}
+
+body {
+    background-color: #212121;
+    color: #a7a7a7;
+    font-family: Arial, serif;
+}
