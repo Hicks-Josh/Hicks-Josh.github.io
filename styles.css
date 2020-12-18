@@ -22,10 +22,25 @@
     color: #5b5b5b;
 }
 
+.main {
+    height: 100%;
+    width: 68%;
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    right: 0;
+    padding-top: 20px;
+}
+
 /* for links to not be in blue */
 a {
     color: #a7a7a7;
     text-decoration: none;
+}
+
+/* removes bullets to make a pretty indent */
+ul {
+    list-style-type: none;
 }
 
 body {
