@@ -1,3 +1,16 @@
+:root {
+    --primary: #22223B;
+    --secondary: #4A4E69;
+    --light-variant: #9A8C98;
+    --mid-variant: #C9ADA7;
+    --dark-variant: #F2E9E4;
+
+    --primary-o: #303030;
+    --secondary-o: #a7a7a7;
+    --light-variant-o: #5b5b5b;
+    --dark-variant-o: #212121;
+}
+
 .sidebar {
     height: 100%;
     width: 30%;
@@ -5,7 +18,8 @@
     z-index: 1;
     top: 0;
     left: 0;
-    background-color: #303030;
+    /* --primary-o */
+    background-color: var(--primary);
     overflow-x: hidden;
     padding-top: 20px;
     vertical-align: bottom;
@@ -14,12 +28,35 @@
 .sidebar img {
     width:75%;
     border-radius: 50%;
-    border: 5px solid #a7a7a7;
+    /* --secondary-o */
+    border: 5px solid var(--dark-variant);
 }
 
+.sidebar span {
+    /* position: absolute;
+    text-align: center;
+    right: 0px; */
+    color: var(--dark-variant);
+    display: inline-block;
+    text-align: left;
+}
+
+/* for the icons */
+.sidebar span img {
+    height: 1.5em;
+    width: 1.5em;
+    font-size: 0.73em;
+    border: 0px;
+    border-radius: 0%;
+}
+
+/* .sidebar li {
+    
+} */
 .fake-h4 {
     font-style: italic;
-    color: #5b5b5b;
+    /* --light-variant-o */
+    color: var(--light-variant);
 }
 
 .main {
@@ -34,8 +71,16 @@
 
 /* for links to not be in blue */
 a {
-    color: #a7a7a7;
+    /* --primary-o */
+    color: var(--primary-variant);
     text-decoration: none;
+    -webkit-transition: 0.2s;
+    transition: 0.2s;
+}
+
+a:hover {
+    /* text-decoration: underline; */
+    color: var(--dark-variant);
 }
 
 /* removes bullets to make a pretty indent */
@@ -44,7 +89,9 @@ ul {
 }
 
 body {
-    background-color: #212121;
-    color: #a7a7a7;
-    font-family: Arial, serif;
+    /* --dark-variant-o */
+    background-color: var(--dark-variant);
+    /* --secondary-o */
+    color: var(--secondary);
+    font-family: Victor Mono, Arial, serif;
 }
