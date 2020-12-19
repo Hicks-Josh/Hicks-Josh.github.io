@@ -95,3 +95,10 @@ body {
     color: var(--secondary);
     font-family: Victor Mono, Arial, serif;
 }
+
+@media screen and (max-width: 800px) {
+    .sidebar, .main {
+        width: 100%;
+        position: relative;
+    }
+}
