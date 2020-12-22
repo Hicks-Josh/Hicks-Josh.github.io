@@ -5,12 +5,31 @@
     <title>Josh Hicks</title>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="styles.css">
+
+    <!--
+    chooses a random image to load for my profile picture
+    does this mean I'm narsicistic well no, maybe insecure?  ahaha... :'(
+    -->
+    <script type="text/javascript">
+    profileImages = new Array();
+    profileImages[0] = "Profile0.jpg";
+    profileImages[1] = "Profile1.jpeg";
+    profileImages[2] = "Profile2.jpg";
+    
+    function getRandomImage() {
+        var randomNum = Math.floor(Math.random() * 3);
+        var randomImage = profileImages[randomNum];
+        document.getElementById("randomImage").innerHTML = ('<img src="images/profileImages/' + randomImage +'" alt="me">')
+    }
+
+    </script>
+
 </head>
 
-<body>
+<body onload = "getRandomImage()">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <div class="sidebar" style="vertical-align: bottom;">
-        <div style="text-align: center;"><img src="images/Profile.jpeg" alt="me">
+        <div style="text-align: center;"><div id="randomImage"></div>
             <h3 style="font-style: italic;">Joshua Hicks</h3>
             <!-- <div class="fake-h4"> Portfolio and Other Significant Work</div> -->
 
@@ -25,7 +44,7 @@
     <div class="main">
         <h1 style="font-style: italic;">projects:</h1>
         <ul>
-            <li><p><h3><a href="https://github.com/Hicks-Josh/Mic1 target="_blank">jvm simulator</a></h3> written in Arm Assembly, based off of Tanenbaum's Mic - 1 Architecture</p></li>
+            <li><p><h3><a href="https://github.com/Hicks-Josh/Mic1" target="_blank">jvm simulator</a></h3> written in Arm Assembly, based off of Tanenbaum's Mic - 1 Architecture</p></li>
             <li><p><h3><a href="https://github.com/Hicks-Josh/Chess" target="_blank">chess</a></h3>a complete c++ implementation of chess minus check-mate</p></li>
             <li><p><h3><a href="https://github.com/Hicks-Josh/Hicks-Josh.github.io" target="_blank">website source</a></h3>the source code of the website you're currently viewing.</p></li>
         </ul>

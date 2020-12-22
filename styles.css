@@ -30,6 +30,7 @@
     border-radius: 50%;
     /* --secondary-o */
     border: 5px solid var(--dark-variant);
+    /* filter:grayscale(100%) */
 }
 
 .sidebar span {
@@ -96,6 +97,7 @@ body {
     font-family: Victor Mono, Arial, serif;
 }
 
+/* For mobile support */
 @media screen and (max-width: 800px) {
     .sidebar, .main {
         width: 100%;
