@@ -87,6 +87,7 @@ a:hover {
 /* removes bullets to make a pretty indent */
 ul {
     list-style-type: none;
+    padding-right: 5%;
 }
 
 body {
