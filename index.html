@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html>
+<style>
+	:root {
+		color-scheme: light dark;
+		font-family: "roboto mono";
+		--light-color-foreground: #37474F;
+		--light-color-background: #FFFFFF;
+		--light-color-highlight: #FAFAFA;
+		--light-color-critical: #FF6F00;
+		--light-color-salient: #673AB7;
+		--light-color-strong: #000000;
+		--light-color-popout: #FFAB91;
+		--light-color-subtle: #ECEFF1;
+		--light-color-faded: #B0BEC5;
+		--dark-color-foreground: #ECEFF4;
+		--dark-color-background: #2E3440;
+		--dark-color-highlight: #3B4252;
+		--dark-color-critical: #EBCB8B;
+		--dark-color-salient: #81A1C1;
+		--dark-color-strong: #ECEFF4;
+		--dark-color-popout: #D08770;
+		--dark-color-subtle: #434C5E;
+		--dark-color-faded: #677691;
+	}
+
+	body {
+		background-color: light-dark(var(--light-color-foreground), var(--dark-color-foreground));
+		background-color: light-dark(var(--light-color-background), var(--dark-color-background));
+		height: 95vh;
+		display: grid;
+		grid-template-rows: auto 1fr auto;
+		grid-template-areas:
+			"header"
+			"main"
+			"footer";
+	}
+
+	mode-line {
+		grid-area: header;
+		display: flex;
+		align-items: center;
+		justify-items: center;
+		gap: 0.5rem;
+		background-color: light-dark(var(--light-color-subtle), var(--dark-color-subtle));
+		padding: 0.15rem;
+	}
+
+	input[type=checkbox] {
+		display: none;
+	}
+
+	input[type=checkbox]+label:before {
+		display: inline-block;
+		background-color: light-dark(var(--light-color-faded), var(--dark-color-faded));
+		color: light-dark(var(--light-color-background), var(--dark-color-background));
+		padding: 0.2rem;
+		cursor: pointer;
+		content: '->';
+	}
+
+	input[type=checkbox]:not(:checked)+label:after {
+		transition: transform 0.3s ease;
+		transform: rotate(180deg);
+	}
+
+	input[type=checkbox]:checked+label:before {
+		content: '->';
+		transition: transform 0.3s ease;
+		transform: rotate(180deg);
+	}
+
+	.text {
+		position: absolute;
+		transition: opacity 0.2s ease;
+	}
+
+	.text-open {
+		opacity: 0;
+	}
+
+	.text-close {
+		opacity: 1;
+	}
+
+	.arrow-label {}
+
+	sidebar {
+		grid-area: sidebar;
+		height: 50%;
+		width: 250px;
+		position: fixed;
+		left: 0.5rem;
+		top: 2.75rem;
+		border-right: 2px dashed light-dark(var(--light-color-subtle), var(--dark-color-subtle));
+		transform: translateX(-250px);
+		transition: transform 250ms cubic-bezier(0.68, -0.55, 0.27, 1.55);
+	}
+
+	sidebar:has(~mode-line input:checked) {
+		transform: translateX(0);
+		width: 250px;
+		border-right: 2px dashed light-dark(var(--light-color-subtle), var(--dark-color-subtle));
+	}
+
+	sidebar:has(~mode-line input:unchecked) {
+		width: 0px;
+		border-right: none;
+	}
+
+	sidebar-item {
+		display: block;
+		color: light-dark(var(--light-color-foreground), var(--dark-color-foreground));
+	}
+
+	content {
+		grid-area: main;
+		background-color: light-dark(var(--light-color-background),
+				var(--dark-color-background));
+		margin-left: 250px;
+		transform: translateX(-250px);
+		transition: transform 250ms cubic-bezier(0.68, -0.55, 0.27, 1.55);
+		justify-self: center;
+	}
+
+	content:has(~mode-line input:checked) {
+		margin-left: 250px;
+		transform: translateX(0);
+	}
+
+	content:has(~mode-line input:unchecked) {
+		transform: translateX(0);
+		margin-left: 0;
+	}
+
+	.avatar {
+		clip-path: circle();
+		height: 12em;
+		display: block;
+	}
+
+	dash-footer {
+		display: grid;
+		justify-content: center;
+		grid-area: footer;
+		border-top: 2px dashed light-dark(var(--light-color-subtle), var(--dark-color-subtle));
+		color: light-dark(var(--light-color-subtle), var(--dark-color-subtle));
+		width: 100%;
+		padding: 0.15rem;
+	}
+
+	footer-item {
+		display: block;
+		align-self: center;
+		justify-self: center;
+	}
+
+	work-section {
+		display: block;
+		padding-top: 0.5rem;
+	}
+
+	work-section-title {
+		display: block;
+		font-weight: bold;
+		color: light-dark(var(--light-color-strong), var(--dark-color-strong));
+	}
+
+	work-section-title::before {
+		content: '*';
+	}
+
+	work-section-subtitle {
+		display: block;
+		color: light-dark(var(--light-color-faded), var(--dark-color-faded));
+	}
+
+	work-section-description {
+		display: block;
+		color: light-dark(var(--light-color-foreground), var(--dark-color-foreground));
+	}
+
+	chip {
+		display: inline-block;
+		background-color: light-dark(var(--light-color-faded), var(--dark-color-faded));
+		border-radius: 0.5rem;
+		padding: 0.15rem;
+	}
+</style>
+
+<body>
+	<sidebar>
+		<img src="./assests/me.webp" class="avatar" />
+		<sidebar-item>Hey I'm Josh, a fullstack software developer based in the Portland, Oregon area!</sidebar-item>
+		<sidebar-item>This entire website was built with zero javascript!</sidebar-item>
+	</sidebar>
+	<content>
+		<section>
+			Professional Experience
+			<work-section>
+				<work-section-title>
+					Software Engineer | Product Owner
+				</work-section-title>
+				<work-section-subtitle>
+					June 2023 - Present
+				</work-section-subtitle>
+				<work-section-description>
+					Connecting with stakeholders to plan and build out in house products to increase department efficiency.
+					Developed multiple full-stack applications using node.js, fastify, postgresql, sequelize, react.js, and Google
+					Cloud Services.Connecting with stakeholders to plan and build out in house products to increase department
+					efficiency. Developed multiple full-stack applications using<br />
+					<chip>node.js</chip>
+					<chip>fastify</chip>
+					<chip>postgresql</chip>
+					<chip>sequelize
+					</chip>
+					<chip>react.js</chip>
+					<chip>Google Cloud Services<chip>
+				</work-section-description>
+			</work-section>
+			<work-section>
+				<work-section-title>
+					Associate Software Engineer
+				</work-section-title>
+				<work-section-subtitle>
+					Apr 2022 - June 2023
+				</work-section-subtitle>
+				<work-section-description>
+					Developed in house applications to save other departments tens of hours a week. Managed setting up new
+					application infrastructure using Docker files, Google Cloud Run and automatic deploys via CicleCi's continuous
+					integration; as well as using Fastifyjs and PostgreSQL to serve data to a front-end mainly using
+					Reactjs.Developed in house applications to save other departments tens of hours a week. Managed setting up new
+					application infrastructure using<br />
+					<chip>Docker</chip>
+					<chip>Google Cloud Run</chip> and automatic deploys via <chip>CicleCi</chip>'s continuous
+					integration; as well as using <chip>Fastifyjs</chip> and <chip>PostgreSQL</chip> to serve data to a front-end
+					mainly using <chip>Reactjs</chip>
+				</work-section-description>
+			</work-section>
+			<work-section>
+				<work-section-title>
+					Software Engineer Intern
+				</work-section-title>
+				<work-section-subtitle>
+					May 2021 - May 2022
+				</work-section-subtitle>
+				<work-section-description>
+					<chip>angular.js</chip>
+					<chip>express.js</chip>
+					<chip>nodeJS</chip>
+					<chip>kubernetes</chip>
+					<chip>docker</chip>
+					<chip>skaffold</chip>
+					<chip>mongoDB</chip>
+					<chip>mysql</chip>
+				</work-section-description>
+			</work-section>
+		</section>
+	</content>
+	<mode-line>
+		<input type="checkbox" checked="checked" id="sidebar-toggle" />
+		<label for="sidebar-toggle" class="arrow-label">
+			<span class="arrow"></span>
+			<span class="text text-close"></span>
+			<span class="text text-open">open</span>
+		</label>
+		<span class="">README.org</span>
+	</mode-line>
+	<dash-footer>
+		<footer-item>Made with ❤️ from Oregon</footer-item>
+		<!-- <footer-item>Also I haven't managed to solve the rotate transform on my sidebar toggle, oopsies...</footer-item> -->
+	</dash-footer>
+</body>
+
+</html>
