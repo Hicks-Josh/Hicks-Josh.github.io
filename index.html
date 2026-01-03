@@ -1,3 +1,5 @@
+<!-- TODO: create thumbnails!!! -->
+<!-- TODO: support mobile!!! -->
 <!DOCTYPE html>
 <html>
 <style>
@@ -128,9 +130,10 @@
 		transform: translateX(0);
 	}
 
-	content:has(~mode-line input:unchecked) {
+	content:has(~mode-line input:unchecked)>section {
 		transform: translateX(0);
 		margin-left: 0;
+		padding-left: 15rem;
 	}
 
 	.avatar {
@@ -186,76 +189,98 @@
 		border-radius: 0.5rem;
 		padding: 0.15rem;
 	}
+
+	popover {
+		cursor: pointer;
+	}
+
+	popover-value {
+		display: none;
+		position: relative;
+		top: 100%;
+		left: 50%;
+		transform: translateX(-50%);
+	}
+
+	popover:hover popover-value {
+		display: block;
+	}
 </style>
 
 <body>
 	<sidebar>
 		<img src="./assests/me.webp" class="avatar" />
 		<sidebar-item>Hey I'm Josh, a fullstack software developer based in the Portland, Oregon area!</sidebar-item>
-		<sidebar-item>This entire website was built with zero javascript!</sidebar-item>
+		<sidebar-item>
+			<popover>
+				This entire website was built with zero javascript!
+				<popover-value>
+					Ironic because I should be advertising my fullstack experience, but it's fun trying to flex my muscles a bit!
+				</popover-value>
+			</popover>
+		</sidebar-item>
 	</sidebar>
 	<content>
-		<section>
-			Professional Experience
-			<work-section>
-				<work-section-title>
-					Software Engineer | Product Owner
-				</work-section-title>
-				<work-section-subtitle>
-					June 2023 - Present
-				</work-section-subtitle>
-				<work-section-description>
-					Connecting with stakeholders to plan and build out in house products to increase department efficiency.
-					Developed multiple full-stack applications using node.js, fastify, postgresql, sequelize, react.js, and Google
-					Cloud Services.Connecting with stakeholders to plan and build out in house products to increase department
-					efficiency. Developed multiple full-stack applications using<br />
-					<chip>node.js</chip>
-					<chip>fastify</chip>
-					<chip>postgresql</chip>
-					<chip>sequelize
-					</chip>
-					<chip>react.js</chip>
-					<chip>Google Cloud Services<chip>
-				</work-section-description>
-			</work-section>
-			<work-section>
-				<work-section-title>
-					Associate Software Engineer
-				</work-section-title>
-				<work-section-subtitle>
-					Apr 2022 - June 2023
-				</work-section-subtitle>
-				<work-section-description>
-					Developed in house applications to save other departments tens of hours a week. Managed setting up new
-					application infrastructure using Docker files, Google Cloud Run and automatic deploys via CicleCi's continuous
-					integration; as well as using Fastifyjs and PostgreSQL to serve data to a front-end mainly using
-					Reactjs.Developed in house applications to save other departments tens of hours a week. Managed setting up new
-					application infrastructure using<br />
-					<chip>Docker</chip>
-					<chip>Google Cloud Run</chip> and automatic deploys via <chip>CicleCi</chip>'s continuous
-					integration; as well as using <chip>Fastifyjs</chip> and <chip>PostgreSQL</chip> to serve data to a front-end
-					mainly using <chip>Reactjs</chip>
-				</work-section-description>
-			</work-section>
-			<work-section>
-				<work-section-title>
-					Software Engineer Intern
-				</work-section-title>
-				<work-section-subtitle>
-					May 2021 - May 2022
-				</work-section-subtitle>
-				<work-section-description>
-					<chip>angular.js</chip>
-					<chip>express.js</chip>
-					<chip>nodeJS</chip>
-					<chip>kubernetes</chip>
-					<chip>docker</chip>
-					<chip>skaffold</chip>
-					<chip>mongoDB</chip>
-					<chip>mysql</chip>
-				</work-section-description>
-			</work-section>
-		</section>
+		Professional Experience
+		<work-section>
+			<work-section-title>
+				Software Engineer | Product Owner
+			</work-section-title>
+			<work-section-subtitle>
+				June 2023 - Present
+			</work-section-subtitle>
+			<work-section-description>
+				Connected with stakeholders to plan and build out in-house products to increase department efficiency.
+				Designed and built multiple full stack applications utilized by all departments to save countless hours for each
+				team.
+				Developed multiple full-stack applications using:<br />
+				<chip>google cloud services</chip>
+				<chip>fastify.js</chip>
+				<chip>node.js</chip>
+				<chip>postgresql</chip>
+				<chip>react.js</chip>
+				<chip>sequelize.js</chip>
+			</work-section-description>
+		</work-section>
+		<work-section>
+			<work-section-title>
+				Associate Software Engineer
+			</work-section-title>
+			<work-section-subtitle>
+				Apr 2022 - June 2023
+			</work-section-subtitle>
+			<work-section-description>
+				Developed in house applications to save other departments tens of hours a week.
+				Managed setting up new application infrastructure using Docker files, Google Cloud Run and automatic deploys via
+				CicleCi's continuous integration; as well as using Fastifyjs and PostgreSQL to serve data to a front-end mainly
+				using Reactjs.
+				Managed setting up new application infrastructure using<br />
+				<chip>cicleCI</chip>
+				<chip>docker</chip>
+				<chip>fastify.js</chip>
+				<chip>google cloud run</chip>
+				<chip>postgreSQL</chip>
+				<chip>react.js</chip>
+			</work-section-description>
+		</work-section>
+		<work-section>
+			<work-section-title>
+				Software Engineer Intern
+			</work-section-title>
+			<work-section-subtitle>
+				May 2021 - May 2022
+			</work-section-subtitle>
+			<work-section-description>
+				<chip>angular.js</chip>
+				<chip>docker</chip>
+				<chip>express.js</chip>
+				<chip>kubernetes</chip>
+				<chip>mongoDB</chip>
+				<chip>mysql</chip>
+				<chip>node.js</chip>
+				<chip>skaffold</chip>
+			</work-section-description>
+		</work-section>
 	</content>
 	<mode-line>
 		<input type="checkbox" checked="checked" id="sidebar-toggle" />
