@@ -113,6 +113,7 @@
 		display: flex;
 		justify-content: center;
 		align-items: center;
+		padding-top: 0.5rem;
 	}
 
 	sidebar-item {
@@ -128,6 +129,7 @@
 		display: flex;
 		align-items: flex-start;
 		flex-direction: column;
+		padding: 1rem;
 	}
 
 	.avatar {
@@ -162,6 +164,7 @@
 		display: block;
 		font-weight: bold;
 		color: light-dark(var(--light-color-strong), var(--dark-color-strong));
+		padding: 0.5rem 0.5rem 0 0.5rem;
 	}
 
 	work-section-title::before {
@@ -171,11 +174,13 @@
 	work-section-subtitle {
 		display: block;
 		color: light-dark(var(--light-color-faded), var(--dark-color-faded));
+		padding-left: 1rem;
 	}
 
 	work-section-description {
 		display: block;
 		color: light-dark(var(--light-color-foreground), var(--dark-color-foreground));
+		padding: 1rem;
 	}
 
 	chip {
@@ -183,6 +188,7 @@
 		background-color: light-dark(var(--light-color-faded), var(--dark-color-faded));
 		border-radius: 0.5rem;
 		padding: 0.15rem;
+		margin: 0.25rem;
 	}
 
 	popover {
@@ -211,6 +217,7 @@
 		}
 
 		sidebar {
+			padding-top: 1rem;
 			border-right: 2px dashed light-dark(var(--light-color-subtle), var(--dark-color-subtle));
 			transform: translateX(-250px);
 			transition: transform 250ms cubic-bezier(0.68, -0.55, 0.27, 1.55);
