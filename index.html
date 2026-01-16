@@ -1,9 +1,14 @@
 <!-- TODO: create thumbnails!!! -->
-<!-- TODO: support mobile!!! -->
+<!-- TODO: add popovers for each chip to describe what they do! -->
+<!-- TODO: I feel like the subtle color for the light mode is too light -->
 <!DOCTYPE html>
 <html>
 
 <head>
+	<!-- this let's us define responsive layouts -->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<!-- fonts used in project -->
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link
@@ -40,8 +45,10 @@
 		height: 95vh;
 		display: grid;
 		grid-template-rows: auto 1fr auto;
+		grid-template-columns: 1fr;
 		grid-template-areas:
 			"header"
+			"sidebar"
 			"main"
 			"footer";
 	}
@@ -57,6 +64,12 @@
 	}
 
 	input[type=checkbox] {
+		display: none;
+	}
+
+
+	/* hide the sidebar toggle when in mobile */
+	label {
 		display: none;
 	}
 
@@ -97,25 +110,9 @@
 
 	sidebar {
 		grid-area: sidebar;
-		height: 50%;
-		width: 250px;
-		position: fixed;
-		left: 0.5rem;
-		top: 2.75rem;
-		border-right: 2px dashed light-dark(var(--light-color-subtle), var(--dark-color-subtle));
-		transform: translateX(-250px);
-		transition: transform 250ms cubic-bezier(0.68, -0.55, 0.27, 1.55);
-	}
-
-	sidebar:has(~mode-line input:checked) {
-		transform: translateX(0);
-		width: 250px;
-		border-right: 2px dashed light-dark(var(--light-color-subtle), var(--dark-color-subtle));
-	}
-
-	sidebar:has(~mode-line input:unchecked) {
-		width: 0px;
-		border-right: none;
+		display: flex;
+		justify-content: center;
+		align-items: center;
 	}
 
 	sidebar-item {
@@ -127,21 +124,10 @@
 		grid-area: main;
 		background-color: light-dark(var(--light-color-background),
 				var(--dark-color-background));
-		margin-left: 250px;
-		transform: translateX(-250px);
-		transition: transform 250ms cubic-bezier(0.68, -0.55, 0.27, 1.55);
 		justify-self: center;
-	}
-
-	content:has(~mode-line input:checked) {
-		margin-left: 250px;
-		transform: translateX(0);
-	}
-
-	content:has(~mode-line input:unchecked)>section {
-		transform: translateX(0);
-		margin-left: 0;
-		padding-left: 15rem;
+		display: flex;
+		align-items: flex-start;
+		flex-direction: column;
 	}
 
 	.avatar {
@@ -158,6 +144,7 @@
 		color: light-dark(var(--light-color-subtle), var(--dark-color-subtle));
 		width: 100%;
 		padding: 0.15rem;
+		margin-top: 1rem;
 	}
 
 	footer-item {
@@ -213,6 +200,53 @@
 	popover:hover popover-value {
 		display: block;
 	}
+
+	@media (min-width: 768px) {
+		body {
+			grid-template-columns: auto auto;
+			grid-template-areas:
+				"header header"
+				"sidebar main"
+				"footer footer";
+		}
+
+		sidebar {
+			border-right: 2px dashed light-dark(var(--light-color-subtle), var(--dark-color-subtle));
+			transform: translateX(-250px);
+			transition: transform 250ms cubic-bezier(0.68, -0.55, 0.27, 1.55);
+			width: 250px;
+			display: revert;
+		}
+
+		sidebar:has(~mode-line input:checked) {
+			transform: translateX(0);
+			width: 250px;
+			border-right: 2px dashed light-dark(var(--light-color-subtle), var(--dark-color-subtle));
+		}
+
+		sidebar:has(~mode-line input:not(checked)) {
+			border-right: none;
+		}
+
+		content {
+			transform: translateX(-250px);
+			transition: transform 250ms cubic-bezier(0.68, -0.55, 0.27, 1.55);
+		}
+
+		content:has(~mode-line input:checked) {
+			transform: translateX(0);
+		}
+
+		content:has(~mode-line input:unchecked)>section {
+			transform: translateX(0);
+			align-items: center;
+		}
+
+		/* only hide the sidebar toggle when in mobile */
+		label {
+			display: revert;
+		}
+	}
 </style>
 
 <body>
@@ -260,10 +294,10 @@
 			<work-section-description>
 				Developed in house applications to save other departments tens of hours a week.
 				Managed setting up new application infrastructure using Docker files, Google Cloud Run and automatic deploys via
-				CicleCi's continuous integration; as well as using Fastifyjs and PostgreSQL to serve data to a front-end mainly
+				CircleCi's continuous integration; as well as using Fastifyjs and PostgreSQL to serve data to a front-end mainly
 				using Reactjs.
 				Managed setting up new application infrastructure using<br />
-				<chip>cicleCI</chip>
+				<chip>circleCI</chip>
 				<chip>docker</chip>
 				<chip>fastify.js</chip>
 				<chip>google cloud run</chip>
