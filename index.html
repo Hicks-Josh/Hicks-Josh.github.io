@@ -1,6 +1,7 @@
 <!-- TODO: create thumbnails!!! -->
 <!-- TODO: add popovers for each chip to describe what they do! -->
 <!-- TODO: I feel like the subtle color for the light mode is too light -->
+<!-- TODO: I didn't even mention what company I worked for lmao -->
 <!DOCTYPE html>
 <html>
 
@@ -190,6 +191,49 @@
 		border-radius: 0.5rem;
 		padding: 0.15rem;
 		margin: 0.25rem;
+		position: relative;
+	}
+
+	chip-title {
+		display: block;
+	}
+
+	chip-content {
+		position: absolute;
+		opacity: 0;
+		visibility: hidden;
+		pointer-events: none;
+		transition: opacity 0.15s ease;
+		background-color: light-dark(var(--light-color-highlight), var(--dark-color-highlight));
+		border-radius: 0.5rem;
+		padding: 2rem;
+		border: 2px dashed light-dark(var(--light-color-subtle), var(--dark-color-subtle));
+		width: 18rem;
+		top: 100%;
+		left: 0;
+		z-index: 1;
+		overflow: scroll;
+
+	}
+
+	/* focus within + a tabindex gives us a cheeky mobile tap support */
+	chip-title:focus-within~chip-content,
+	chip-content:focus-within,
+	chip-content:hover,
+	chip-title:hover~chip-content {
+		opacity: 1;
+		visibility: visible;
+		pointer-events: auto;
+	}
+
+	chip-title>a {
+		cursor: pointer;
+		color: inherit;
+		text-decoration: inherit;
+	}
+
+	chip-title>a::hover {
+		text-decoration: underline;
 	}
 
 	popover {
@@ -206,6 +250,47 @@
 
 	popover:hover popover-value {
 		display: block;
+	}
+
+	gcs-chip {
+		display: inline-block;
+		background-color: light-dark(var(--light-color-faded), var(--dark-color-faded));
+		border-radius: 0.5rem;
+		padding: 0.15rem;
+		margin: 0.25rem;
+	}
+
+	gcs-chip::before {
+		content: 'google cloud services';
+	}
+
+	gcs-chip-content {
+		position: absolute;
+		opacity: 0;
+		visibility: hidden;
+		pointer-events: none;
+		transition: opacity 0.15s ease;
+		background-color: light-dark(var(--light-color-highlight), var(--dark-color-highlight));
+		border-radius: 0.5rem;
+		padding: 2rem;
+		border: 2px dashed light-dark(var(--light-color-subtle), var(--dark-color-subtle));
+		width: 18rem;
+	}
+
+	gcs-chip-content::before {
+		content: attr(data-link) '\A';
+		white-space: pre-line;
+		font-weight: bold;
+	}
+
+	gcs-chip-content::after {
+		content: 'A platform with a suite of cloud computing services offered by Google that provides a series of modular cloud services such as computing, data storage, data analytics, and machine learning, alongside a set of management tools.' attr(data-link);
+	}
+
+	gcs-chip:hover~gcs-chip-content {
+		opacity: 1;
+		visibility: visible;
+		pointer-events: auto;
 	}
 
 	@media (min-width: 768px) {
@@ -254,6 +339,8 @@
 		label {
 			display: revert;
 		}
+
+		chip-content: {}
 	}
 </style>
 
@@ -284,10 +371,32 @@
 				Designed and built multiple full stack applications utilized by all departments to save countless hours for each
 				team.
 				Developed multiple full-stack applications using:<br />
-				<chip>google cloud services</chip>
-				<chip>fastify.js</chip>
-				<chip>node.js</chip>
-				<chip>postgresql</chip>
+				<chip>
+					<chip-title tabindex="0"><a href="https://cloud.google.com/" target="_blank">google cloud
+							services</a></chip-title>
+					<chip-content>
+						A platform with a suite of cloud computing services offered by
+						Google that provides a series of modular cloud services such as computing, data storage, data analytics, and
+						machine learning, alongside a set of management tools</chip-content>
+				</chip>
+				<chip>
+					<chip-title tabindex="1"><a href="https://fastify.dev/" target="_blank">fastify.js</a></chip-title>
+					<chip-content>
+						A high performance and low overheard node.js web framework. It provides a schema based validation system,
+						plugin architecture, and builtin support for json serialization; with an emphasis on asynchronous, non
+						blocking operations, with minimal overhead compared to a framework like express.js
+					</chip-content>
+				</chip>
+				<chip>
+					<chip-title tabindex="2"><a href="https://nodejs.org/en" target="_blank">node.js</a></chip-title>
+					<chip-content>
+						An open source, cross platform javascript runtime
+					</chip-content>
+				</chip>
+				<chip>
+					<chip-title tabindex="3"><a href="https://www.postgresql.org/" target="_blank">postgresql</a></chip-title>
+					<chip-content>A relational database system emphasizing extensability and sql compliance</chip-content>
+				</chip>
 				<chip>react.js</chip>
 				<chip>sequelize.js</chip>
 			</work-section-description>
