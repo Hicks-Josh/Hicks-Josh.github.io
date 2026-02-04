@@ -198,8 +198,10 @@
 		display: block;
 	}
 
+	/* turns mobile version into a dialog */
 	chip-content {
-		position: absolute;
+		position: fixed;
+		inset: 0;
 		opacity: 0;
 		visibility: hidden;
 		pointer-events: none;
@@ -209,31 +211,21 @@
 		padding: 2rem;
 		border: 2px dashed light-dark(var(--light-color-subtle), var(--dark-color-subtle));
 		width: 18rem;
-		top: 100%;
-		left: 0;
+		top: 50%;
 		z-index: 1;
+		margin: auto;
+		max-width: min(90vw, 480px);
+		max-height: 90vh;
+		overflow: auto;
+		width: fit-content;
 		overflow: scroll;
-
 	}
 
 	/* focus within + a tabindex gives us a cheeky mobile tap support */
-	chip-title:focus-within~chip-content,
-	chip-content:focus-within,
-	chip-content:hover,
-	chip-title:hover~chip-content {
+	chip-title:focus-within~chip-content {
 		opacity: 1;
 		visibility: visible;
 		pointer-events: auto;
-	}
-
-	chip-title>a {
-		cursor: pointer;
-		color: inherit;
-		text-decoration: inherit;
-	}
-
-	chip-title>a::hover {
-		text-decoration: underline;
 	}
 
 	popover {
@@ -250,47 +242,6 @@
 
 	popover:hover popover-value {
 		display: block;
-	}
-
-	gcs-chip {
-		display: inline-block;
-		background-color: light-dark(var(--light-color-faded), var(--dark-color-faded));
-		border-radius: 0.5rem;
-		padding: 0.15rem;
-		margin: 0.25rem;
-	}
-
-	gcs-chip::before {
-		content: 'google cloud services';
-	}
-
-	gcs-chip-content {
-		position: absolute;
-		opacity: 0;
-		visibility: hidden;
-		pointer-events: none;
-		transition: opacity 0.15s ease;
-		background-color: light-dark(var(--light-color-highlight), var(--dark-color-highlight));
-		border-radius: 0.5rem;
-		padding: 2rem;
-		border: 2px dashed light-dark(var(--light-color-subtle), var(--dark-color-subtle));
-		width: 18rem;
-	}
-
-	gcs-chip-content::before {
-		content: attr(data-link) '\A';
-		white-space: pre-line;
-		font-weight: bold;
-	}
-
-	gcs-chip-content::after {
-		content: 'A platform with a suite of cloud computing services offered by Google that provides a series of modular cloud services such as computing, data storage, data analytics, and machine learning, alongside a set of management tools.' attr(data-link);
-	}
-
-	gcs-chip:hover~gcs-chip-content {
-		opacity: 1;
-		visibility: visible;
-		pointer-events: auto;
 	}
 
 	@media (min-width: 768px) {
@@ -340,7 +291,23 @@
 			display: revert;
 		}
 
-		chip-content: {}
+		/* turns desktop version into a popover hint */
+		chip-content {
+			position: absolute;
+			top: 100%;
+			left: 0;
+			z-index: 1;
+			max-width: inherit;
+			width: 18rem;
+			height: fit-content;
+		}
+
+		chip-content:hover,
+		chip-title:hover~chip-content {
+			opacity: 1;
+			visibility: visible;
+			pointer-events: auto;
+		}
 	}
 </style>
 
@@ -372,9 +339,10 @@
 				team.
 				Developed multiple full-stack applications using:<br />
 				<chip>
-					<chip-title tabindex="0"><a href="https://cloud.google.com/" target="_blank">google cloud
-							services</a></chip-title>
+					<chip-title tabindex="0">google cloud services</chip-title>
 					<chip-content>
+						<a href="https://cloud.google.com/" target="_blank">google cloud
+							services</a>
 						A platform with a suite of cloud computing services offered by
 						Google that provides a series of modular cloud services such as computing, data storage, data analytics, and
 						machine learning, alongside a set of management tools</chip-content>
