@@ -221,6 +221,11 @@
 		overflow: scroll;
 	}
 
+	/* this ends focus when a user taps outside of content */
+	*:focus:not(:focus-visible) {
+		outline: none;
+	}
+
 	/* focus within + a tabindex gives us a cheeky mobile tap support */
 	chip-title:focus-within~chip-content {
 		opacity: 1;
@@ -242,6 +247,14 @@
 
 	popover:hover popover-value {
 		display: block;
+	}
+
+	chip-content>a {
+		font-weight: bold;
+		display: block;
+		text-decoration: none;
+		color: light-dark(var(--light-color-popout), var(--dark-color-popout));
+		padding-bottom: 0.5rem;
 	}
 
 	@media (min-width: 768px) {
@@ -302,14 +315,6 @@
 			max-width: inherit;
 			width: 18rem;
 			height: fit-content;
-		}
-
-		chip-content>a {
-			font-weight: bold;
-			display: block;
-			text-decoration: none;
-			color: light-dark(var(--light-color-popout), var(--dark-color-popout));
-			padding-bottom: 0.5rem;
 		}
 
 		chip-content>a:hover {
