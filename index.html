@@ -1,8 +1,4 @@
-<!-- TODO: when sidebar is open in desktip view, the chip content is cut -->
 <!-- TODO: create thumbnails!!! -->
-<!-- TODO: add popovers for each chip to describe what they do! -->
-<!-- TODO: I feel like the subtle color for the light mode is too light -->
-<!-- TODO: I didn't even mention what company I worked for lmao -->
 <!DOCTYPE html>
 <html>
 
@@ -122,6 +118,7 @@
 	sidebar-item {
 		display: block;
 		color: light-dark(var(--light-color-foreground), var(--dark-color-foreground));
+		padding-top: 1rem;
 	}
 
 	content {
@@ -146,7 +143,7 @@
 		justify-content: center;
 		grid-area: footer;
 		border-top: 2px dashed light-dark(var(--light-color-subtle), var(--dark-color-subtle));
-		color: light-dark(var(--light-color-subtle), var(--dark-color-subtle));
+		color: light-dark(var(--light-color-faded), var(--dark-color-faded));
 		width: 100%;
 		padding: 0.15rem;
 		margin-top: 1rem;
@@ -164,14 +161,24 @@
 	}
 
 	work-section-title {
-		display: block;
 		font-weight: bold;
 		color: light-dark(var(--light-color-strong), var(--dark-color-strong));
 		padding: 0.5rem 0.5rem 0 0.5rem;
 	}
 
-	work-section-title::before {
-		content: '*';
+	work-section-title>span {
+		color: light-dark(var(--light-color-faded), var(--dark-color-faded));
+		display: block;
+		padding-left: 1.5rem;
+	}
+
+	work-section-title>span>a {
+		text-decoration: none;
+		color: inherit;
+	}
+
+	work-section-title>span>a:hover {
+		text-decoration: underline;
 	}
 
 	work-section-subtitle {
@@ -316,6 +323,16 @@
 			display: revert;
 		}
 
+		work-section-title {
+			display: flex;
+			justify-content: space-between;
+		}
+
+		work-section-title>span {
+			display: inline;
+			padding-left: revert;
+		}
+
 		/* turns desktop version into a popover hint */
 		chip-content {
 			resize: both;
@@ -362,16 +379,17 @@
 		Professional Experience
 		<work-section>
 			<work-section-title>
-				Software Engineer | Product Owner
+				* Software Engineer | Product Owner <span>:<a href="https://www.tzmedical.com/"
+						target="_blank">tz-medical</a>:</span>
 			</work-section-title>
 			<work-section-subtitle>
-				June 2023 - Present
+				June 2023 - December 2025
 			</work-section-subtitle>
 			<work-section-description>
-				Connected with stakeholders to plan and build out in-house products to increase department efficiency.
-				Designed and built multiple full stack applications utilized by all departments to save countless hours for each
-				team.
-				Developed multiple full-stack applications using:<br />
+				Collaborated with stakeholders to plan and own in house products to designing and building full stack
+				applications from the ground up to automate manual work and free up tens of hours a week for multiple
+				departments
+				<br />
 				<chip>
 					<chip-title tabindex="0">google cloud services</chip-title>
 					<chip-content>
@@ -430,17 +448,15 @@
 		</work-section>
 		<work-section>
 			<work-section-title>
-				Associate Software Engineer
+				* Associate Software Engineer <span>:<a href="https://www.tzmedical.com/" target="_blank">tz-medical</a>:</span>
 			</work-section-title>
 			<work-section-subtitle>
 				Apr 2022 - June 2023
 			</work-section-subtitle>
 			<work-section-description>
-				Developed in house applications to save other departments tens of hours a week.
-				Managed setting up new application infrastructure using Docker files, Google Cloud Run and automatic deploys via
-				CircleCi's continuous integration; as well as using Fastifyjs and PostgreSQL to serve data to a front-end mainly
-				using react.js.
-				Managed setting up new application infrastructure using<br />
+				Worked with a team to developed full stack applications that better visualize key metrics and automate
+				repetitive workflows for internal departments
+				<br />
 				<chip>
 					<chip-title tabindex="6">circleci</chip-title>
 					<chip-content>
@@ -499,7 +515,7 @@
 		</work-section>
 		<work-section>
 			<work-section-title>
-				Software Engineer Intern
+				* Software Engineer Intern <span>:<a href="https://www.tzmedical.com/" target="_blank">tz-medical</a>:</span>
 			</work-section-title>
 			<work-section-subtitle>
 				May 2021 - May 2022
