@@ -230,8 +230,14 @@
 	}
 
 	chip-close {
-		display: block;
+		display: flex;
+		justify-content: center;
 		align-items: center;
+		margin: 2rem 14rem;
+		border-radius: 0.5rem;
+		background-color: light-dark(var(--light-color-background), var(--dark-color-background));
+		font-size: 1.5rem;
+		cursor: pointer;
 	}
 
 	chip-close:focus-within~chip-content {
