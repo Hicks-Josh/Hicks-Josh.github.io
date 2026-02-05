@@ -1,3 +1,4 @@
+<!-- TODO: when sidebar is open in desktip view, the chip content is cut -->
 <!-- TODO: create thumbnails!!! -->
 <!-- TODO: add popovers for each chip to describe what they do! -->
 <!-- TODO: I feel like the subtle color for the light mode is too light -->
@@ -221,16 +222,22 @@
 		overflow: scroll;
 	}
 
-	/* this ends focus when a user taps outside of content */
-	*:focus:not(:focus-visible) {
-		outline: none;
-	}
-
 	/* focus within + a tabindex gives us a cheeky mobile tap support */
 	chip-title:focus-within~chip-content {
 		opacity: 1;
 		visibility: visible;
 		pointer-events: auto;
+	}
+
+	chip-close {
+		display: block;
+		align-items: center;
+	}
+
+	chip-close:focus-within~chip-content {
+		opacity: 0;
+		visibility: hidden;
+		pointer-events: none;
 	}
 
 	popover {
@@ -317,6 +324,10 @@
 			height: fit-content;
 		}
 
+		chip-close {
+			display: none;
+		}
+
 		chip-content>a:hover {
 			text-decoration: underline;
 		}
@@ -364,7 +375,9 @@
 							services</a>
 						A platform with a suite of cloud computing services offered by
 						Google that provides a series of modular cloud services such as computing, data storage, data analytics, and
-						machine learning, alongside a set of management tools</chip-content>
+						machine learning, alongside a set of management tools
+						<chip-close tabindex="-1">x</chip-close>
+					</chip-content>
 				</chip>
 				<chip>
 					<chip-title tabindex="1">fastify.js</chip-title>
@@ -373,6 +386,7 @@
 						A high performance and low overheard node.js web framework. It provides a schema based validation system,
 						plugin architecture, and builtin support for json serialization; with an emphasis on asynchronous, non
 						blocking operations, with minimal overhead compared to a framework like express.js
+						<chip-close tabindex="-1">x</chip-close>
 					</chip-content>
 				</chip>
 				<chip>
@@ -380,13 +394,16 @@
 					<chip-content>
 						<a href="https://nodejs.org/en" target="_blank">node.js</a>
 						An open source, cross platform javascript runtime
+						<chip-close tabindex="-1">x</chip-close>
 					</chip-content>
 				</chip>
 				<chip>
 					<chip-title tabindex="3">postgresql</chip-title>
 					<chip-content>
 						<a href="https://www.postgresql.org/" target="_blank">postgresql</a>
-						A relational database system emphasizing extensability and sql compliance</chip-content>
+						A relational database system emphasizing extensability and sql compliance
+						<chip-close tabindex="-1">x</chip-close>
+					</chip-content>
 				</chip>
 				<chip>
 					<chip-title tabindex="4">react.js</chip-title>
@@ -394,6 +411,7 @@
 						<a href="https://react.dev/" target="_blank">react.js</a>
 						A front end javascript library created for building user interfaces by composing reusable components that
 						manage their own state utilizing a virtual dom
+						<chip-close tabindex="-1">x</chip-close>
 					</chip-content>
 				</chip>
 				<chip>
@@ -401,6 +419,7 @@
 					<chip-content>
 						<a href="https://sequelize.org/" target="_blank">sequelize.js</a>
 						A promise based orm for node.js
+						<chip-close tabindex="-1">x</chip-close>
 					</chip-content>
 				</chip>
 			</work-section-description>
@@ -423,6 +442,7 @@
 					<chip-content>
 						<a href="https://circleci.com" target="_blank">circleci</a>
 						A continuous integration and continuous delivery platform used for devops practices.
+						<chip-close tabindex="-1">x</chip-close>
 					</chip-content>
 				</chip>
 				<chip>
@@ -430,6 +450,7 @@
 					<chip-content>
 						<a href="https://docker.com" target="_blank">docker</a>
 						A set of products that utilizes os level virtualization to deliver software in containers.
+						<chip-close tabindex="-1">x</chip-close>
 					</chip-content>
 				</chip>
 				<chip>
@@ -439,6 +460,7 @@
 						A high performance and low overheard node.js web framework. It provides a schema based validation system,
 						plugin architecture, and builtin support for json serialization; with an emphasis on asynchronous, non
 						blocking operations, with minimal overhead compared to a framework like express.js
+						<chip-close tabindex="-1">x</chip-close>
 					</chip-content>
 				</chip>
 				<chip>
@@ -448,13 +470,17 @@
 							services</a>
 						A platform with a suite of cloud computing services offered by
 						Google that provides a series of modular cloud services such as computing, data storage, data analytics, and
-						machine learning, alongside a set of management tools</chip-content>
+						machine learning, alongside a set of management tools
+						<chip-close tabindex="-1">x</chip-close>
+					</chip-content>
 				</chip>
 				<chip>
 					<chip-title tabindex="10">postgresql</chip-title>
 					<chip-content>
 						<a href="https://www.postgresql.org/" target="_blank">postgresql</a>
-						A relational database system emphasizing extensability and sql compliance</chip-content>
+						A relational database system emphasizing extensability and sql compliance
+						<chip-close tabindex="-1">x</chip-close>
+					</chip-content>
 				</chip>
 				<chip>
 					<chip-title tabindex="11">react.js</chip-title>
@@ -462,6 +488,7 @@
 						<a href="https://react.dev/" target="_blank">react.js</a>
 						A front end javascript library created for building user interfaces by composing reusable components that
 						manage their own state utilizing a virtual dom
+						<chip-close tabindex="-1">x</chip-close>
 					</chip-content>
 				</chip>
 			</work-section-description>
@@ -480,6 +507,7 @@
 						<a href="https://angularjs.org/" target="_blank">angular.js</a>
 						A front end javascript framework for building dynamic, single page web applications; utilizing a two way
 						data binding and mvc style architecture to keep data and ui in sync.
+						<chip-close tabindex="-1">x</chip-close>
 					</chip-content>
 				</chip>
 				<chip>
@@ -487,6 +515,7 @@
 					<chip-content>
 						<a href="https://docker.com" target="_blank">docker</a>
 						A set of products that utilizes os level virtualization to deliver software in containers.
+						<chip-close tabindex="-1">x</chip-close>
 					</chip-content>
 				</chip>
 				<chip>
@@ -495,6 +524,7 @@
 						<a href="https://expressjs.com" target="_blank">express.js</a>
 						A back end web application framework for node.js built for web applications and apis. Providing simple
 						routing, middleware support, and http utilities.
+						<chip-close tabindex="-1">x</chip-close>
 					</chip-content>
 				</chip>
 				<chip>
@@ -503,6 +533,7 @@
 						<a href="https://kubernetes.io/" target="_blank">kubernetes</a>
 						A platform for automating deployment, scaling, and management of containerized applications to orchestrate
 						across clusters, handling service discovery, loading balancing, and self healing.
+						<chip-close tabindex="-1">x</chip-close>
 					</chip-content>
 				</chip>
 				<chip>
@@ -510,6 +541,7 @@
 					<chip-content>
 						<a href="https://www.mongodb.com/" target="_blank">mongodb</a>
 						A nosql document oriented databse that stores data in json like bson documents.
+						<chip-close tabindex="-1">x</chip-close>
 					</chip-content>
 				</chip>
 				<chip>
@@ -517,6 +549,7 @@
 					<chip-content>
 						<a href="https://www.mysql.com/" target="_blank">mysql</a>
 						A relational databse management sysetm used to store, organize, and retrieve structured data using sql.
+						<chip-close tabindex="-1">x</chip-close>
 					</chip-content>
 				</chip>
 				<chip>
@@ -524,6 +557,7 @@
 					<chip-content>
 						<a href="https://www.nodejs.org/en" target="_blank">node.js</a>
 						An open source, cross platform javascript runtime
+						<chip-close tabindex="-1">x</chip-close>
 					</chip-content>
 				</chip>
 				<chip>
@@ -532,6 +566,7 @@
 						<a href="https://www.skaffold.dev" target="_blank">skaffold</a>
 						An open source cli tool that automates the build, push, and deploy workflow for containerized applications
 						on kubernetes.
+						<chip-close tabindex="-1">x</chip-close>
 					</chip-content>
 				</chip>
 			</work-section-description>
