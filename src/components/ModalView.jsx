@@ -1,17 +1,11 @@
 import React from 'react';
 
 import AboutMe from './views/AboutMe.jsx';
-import MorphingText from './MorphingText.jsx';
 import NavItem from './NavItem.jsx';
 import LastPlayed from './views/LastPlayed.jsx';
 import Welcome from './views/Welcome.jsx';
-import Window from './Window.jsx';
 
 import useMediaQuery from '../hooks/useMediaQuery.jsx';
-
-import steamData from '../steamData.json';
-import me from '../assets/me.webp';
-import moominGif from '../assets/moomin.gif';
 
 const filterStyles = {
   backdropFilter: 'blur(10px)',

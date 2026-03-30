@@ -9,7 +9,7 @@ const imgStyle = {
   width: '100%',
 };
 
-function Window({ src }) {
+function Window({ alt, src }) {
   const isMobile = useMediaQuery();
 
   const windowStyle = React.useMemo(
@@ -32,7 +32,7 @@ function Window({ src }) {
 
   return (
     <div style={windowStyle}>
-      <img src={src} style={imgStyle} />
+      <img src={src} style={imgStyle} alt={alt} />
     </div>
   );
 }

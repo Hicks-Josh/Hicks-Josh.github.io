@@ -22,7 +22,6 @@ function AboutMe({ fullscreen, handleFullscreenToggle }) {
     () => ({
       intro: {
         fontFamily: 'Roboto mono, mono',
-        textAlign: 'justify',
         width: '66%',
         margin: '2rem auto 2rem auto',
         textAlign: 'justify',
@@ -84,7 +83,7 @@ function AboutMe({ fullscreen, handleFullscreenToggle }) {
 
   return (
     <React.Fragment>
-      <Window src={me} />
+      <Window src={me} alt="image of me" />
       <p style={styles.intro}>
         I'm a full stack software engineer with experience in product ownership
         <br />

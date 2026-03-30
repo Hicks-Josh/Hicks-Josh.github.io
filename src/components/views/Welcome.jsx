@@ -31,7 +31,7 @@ function Welcome() {
 
   return (
     <React.Fragment>
-      <Window src={moominGif} />
+      <Window src={moominGif} alt="image of popular cartoon character Moomin" />
       <div style={welcomeStyle}>
         <p
           style={{

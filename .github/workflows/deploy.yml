@@ -3,12 +3,12 @@ name: Daily Redeploy to gh-pages
 # Trigger this workflow every day at midnight UTC
 on:
   schedule:
-    - cron: '48 10 * * *'  # Every day at midnight UTC
-  workflow_dispatch:  # Allows manual trigger as well
+    - cron: '0 0 * * *' # Every day at midnight UTC
+  workflow_dispatch: # Allows manual trigger as well
 
 jobs:
   update-data-and-deploy:
-    runs-on: ubuntu-latest  # You can use other runners as needed
+    runs-on: ubuntu-latest # You can use other runners as needed
 
     steps:
       - name: Checkout repository

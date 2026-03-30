@@ -22,7 +22,6 @@ function LastPlayed() {
     () => ({
       intro: {
         fontFamily: 'Roboto mono, mono',
-        textAlign: 'justify',
         width: '66%',
         margin: '5rem auto 2rem auto',
         textAlign: 'justify',
@@ -84,7 +83,7 @@ function LastPlayed() {
 
   return (
     <React.Fragment>
-      <Window src={steamData?.profilePicture} />
+      <Window src={steamData?.profilePicture} alt="picture of steam profile" />
       <p style={styles.intro}>
         If I'm not coding then I'm probably playing some games; here's the last
         three games I played:
@@ -92,9 +91,18 @@ function LastPlayed() {
       <div style={styles.list}>
         {steamData.parsedGames.map((game, index) => (
           <div style={styles.card(index)} key={game.name}>
-            <img src={game.logo} style={styles.image} />
+            <img
+              src={game.logo}
+              style={styles.image}
+              img="image of game logo"
+            />
             <div style={styles.info}>
-              <a href={game.link} target="_blank" style={styles.link}>
+              <a
+                href={game.link}
+                target="_blank"
+                rel="noreferrer"
+                style={styles.link}
+              >
                 {game.name}
               </a>
               <span style={styles.hours}>
