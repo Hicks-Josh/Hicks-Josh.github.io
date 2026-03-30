@@ -91,11 +91,7 @@ function LastPlayed() {
       <div style={styles.list}>
         {steamData.parsedGames.map((game, index) => (
           <div style={styles.card(index)} key={game.name}>
-            <img
-              src={game.logo}
-              style={styles.image}
-              alt="image of game logo"
-            />
+            <img src={game.logo} style={styles.image} alt="game logo" />
             <div style={styles.info}>
               <a
                 href={game.link}
