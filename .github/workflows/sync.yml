@@ -16,12 +16,12 @@ jobs:
       - name: Checkout repo
         uses: actions/checkout@v3
 
-      - name: Set up Node (remove if not needed)
+      - name: Set up Node
         uses: actions/setup-node@v3
         with:
           node-version: '24'
 
-      - name: Install dependencies (optional)
+      - name: Install dependencies
         run: npm install
 
       - name: Run script
