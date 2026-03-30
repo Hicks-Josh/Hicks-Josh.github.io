@@ -16,45 +16,6 @@ const filterStyles = {
   zIndex: 30,
 };
 
-const styles = {
-  nav: {
-    main: {
-      ...filterStyles,
-      height: '3rem',
-      width: '35%',
-      minWidth: 'max-content',
-      backdropFilter: 'blur(20px)',
-      border: '1px solid rgba(255, 255, 255, 0.2)',
-      borderRadius: '50px',
-      padding: '12px 25px',
-      display: 'flex',
-      alignItems: 'center',
-      textAlign: 'center',
-      justifyContent: 'center',
-      boxShadow: `
-            0 20px 40px rgba(0, 0, 0, 0.1),
-            inset 0 1px 0 rgba(255, 255, 255, 0.2)`,
-      transition: 'all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94)',
-      position: 'absolute',
-      left: '50%',
-      transform: 'translateX(-50%)',
-      top: '82%',
-      overflow: 'hidden',
-      zIndex: 30,
-    },
-    list: {
-      display: 'flex',
-      alignItems: 'center',
-      // gap: '5px',
-      margin: 0,
-      padding: 0,
-      listStyle: 'none',
-      zIndex: 2,
-      position: 'relative',
-    },
-  },
-};
-
 // TODO: we'll want to support the main text, probably as a child rather than a string
 // TODO: we'll want to change the image
 // so where do we define the actual content?
@@ -74,15 +35,53 @@ function ModalView() {
     []
   );
 
-  const modalStyle = React.useMemo(
+  const styles = React.useMemo(
     () => ({
-      ...filterStyles,
-      transform: 'translate(-50%, -60%)',
-      width: fullscreen || isMobile ? '100%' : '60%',
-      height: fullscreen || isMobile ? '100%' : '75%',
-      position: 'absolute',
-      top: fullscreen || isMobile ? '60%' : '50%',
-      left: '50%',
+      nav: {
+        main: {
+          ...filterStyles,
+          height: '3rem',
+          width: '35%',
+          minWidth: 'max-content',
+          backdropFilter: 'blur(20px)',
+          border: '1px solid rgba(255, 255, 255, 0.2)',
+          borderRadius: '50px',
+          padding: '12px 25px',
+          display: 'flex',
+          alignItems: 'center',
+          textAlign: 'center',
+          justifyContent: 'center',
+          boxShadow: `
+            0 20px 40px rgba(0, 0, 0, 0.1),
+            inset 0 1px 0 rgba(255, 255, 255, 0.2)`,
+          transition: 'all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94)',
+          position: 'absolute',
+          left: '50%',
+          transform: 'translateX(-50%)',
+          top: isMobile ? '87%' : '82%',
+          overflow: 'hidden',
+          zIndex: 30,
+        },
+        list: {
+          display: 'flex',
+          alignItems: 'center',
+          // gap: '5px',
+          margin: 0,
+          padding: 0,
+          listStyle: 'none',
+          zIndex: 2,
+          position: 'relative',
+        },
+      },
+      modal: {
+        ...filterStyles,
+        transform: 'translate(-50%, -60%)',
+        width: fullscreen || isMobile ? '100%' : '60%',
+        height: fullscreen || isMobile ? '100%' : '75%',
+        position: 'absolute',
+        top: fullscreen || isMobile ? '60%' : '50%',
+        left: '50%',
+      },
     }),
     [fullscreen, isMobile]
   );
@@ -94,7 +93,7 @@ function ModalView() {
 
   return (
     <React.Fragment>
-      <div style={modalStyle}>
+      <div style={styles.modal}>
         {selectedView === modalViews[0] && <Welcome />}
         {selectedView === modalViews[1] && (
           <AboutMe
