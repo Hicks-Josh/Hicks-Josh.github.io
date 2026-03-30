@@ -83,11 +83,11 @@ function ModalView() {
   const modalStyle = React.useMemo(
     () => ({
       ...filterStyles,
-      transform: 'translate(-50%, -50%)',
+      transform: 'translate(-50%, -60%)',
       width: fullscreen || isMobile ? '100%' : '60%',
-      height: fullscreen || isMobile ? '100%' : '60%',
+      height: fullscreen || isMobile ? '100%' : '75%',
       position: 'absolute',
-      top: '50%',
+      top: fullscreen || isMobile ? '60%' : '50%',
       left: '50%',
     }),
     [fullscreen, isMobile]
@@ -95,6 +95,7 @@ function ModalView() {
 
   const handleViewChange = React.useCallback((view) => {
     setSelectedView(view);
+    setFullscreen(false);
   }, []);
 
   return (

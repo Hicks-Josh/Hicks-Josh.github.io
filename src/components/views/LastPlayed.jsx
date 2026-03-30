@@ -16,6 +16,7 @@ const filterStyles = {
 
 function LastPlayed() {
   const isMobile = useMediaQuery();
+  const isExtraSmall = useMediaQuery('(max-width: 680px)');
 
   const styles = React.useMemo(
     () => ({
@@ -23,7 +24,7 @@ function LastPlayed() {
         fontFamily: 'Roboto mono, mono',
         textAlign: 'justify',
         width: '66%',
-        margin: '2rem auto 2rem auto',
+        margin: '5rem auto 2rem auto',
         textAlign: 'justify',
         textAlignLast: 'justify',
         wordSpacing: '0.05em',
@@ -48,9 +49,9 @@ function LastPlayed() {
         flexDirection: 'column',
         gap: '1.5rem',
         width: '80%',
-        margin: '0 auto',
+        margin: isMobile ? '0 11%' : '0 auto',
         zIndex: -10,
-        ...(!isMobile && { top: -130 }),
+        top: isMobile ? 0 : -50,
       },
       // TODO: remove index if not using animation delay!
       card: (index) => ({
@@ -103,10 +104,12 @@ function LastPlayed() {
           </div>
         ))}
       </div>
-      <p style={styles.introSub}>
-        (this is a front end application, so I'm just resyncing the data every
-        night, oh no it's not 100% accurate! 😨)
-      </p>
+      {!isExtraSmall && (
+        <p style={styles.introSub}>
+          (this is a front end application, so I'm just resyncing the data every
+          night, oh no it's not 100% accurate! 😨)
+        </p>
+      )}
     </React.Fragment>
   );
 }

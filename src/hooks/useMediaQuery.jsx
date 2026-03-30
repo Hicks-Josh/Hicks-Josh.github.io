@@ -1,6 +1,6 @@
 import React from 'react';
 
-function useMediaQuery(query = '(max-width: 800px)') {
+function useMediaQuery(query = '(max-width: 1100px)') {
   // Initialize with matchMedia API
   const [matches, setMatches] = React.useState(
     typeof window !== 'undefined' && window.matchMedia(query).matches

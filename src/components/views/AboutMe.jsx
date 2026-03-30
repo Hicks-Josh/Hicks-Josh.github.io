@@ -16,6 +16,7 @@ const filterStyles = {
 
 function AboutMe({ fullscreen, handleFullscreenToggle }) {
   const isMobile = useMediaQuery();
+  const isExtraSmall = useMediaQuery('(max-width: 680px)');
 
   const styles = React.useMemo(
     () => ({
@@ -38,7 +39,7 @@ function AboutMe({ fullscreen, handleFullscreenToggle }) {
         width: '80%',
         margin: '0 auto',
         zIndex: -10,
-        maxHeight: '60vh',
+        maxHeight: isExtraSmall ? '45vh' : '60vh',
         overflowY: 'auto',
         ...(!isMobile && { top: -100 }),
       },
@@ -72,12 +73,13 @@ function AboutMe({ fullscreen, handleFullscreenToggle }) {
         fontFamily: 'Roboto Mono, mono',
         fontSize: '1.25rem',
         position: 'fixed',
-        bottom: '10%',
+        top: fullscreen ? '15%' : '30%',
         left: '50%',
         transform: 'translateX(-50%)',
+        transition: 'all 1s',
       },
     }),
-    [fullscreen, isMobile]
+    [fullscreen, isExtraSmall, isMobile]
   );
 
   return (
@@ -88,10 +90,11 @@ function AboutMe({ fullscreen, handleFullscreenToggle }) {
         <br />
         If you'd like to see my qualifications you're at the right spot!
       </p>
-
-      <button style={styles.button} onClick={handleFullscreenToggle}>
-        [expand]
-      </button>
+      {!isMobile && (
+        <button style={styles.button} onClick={handleFullscreenToggle}>
+          [{fullscreen ? 'collapse' : 'expand'}]
+        </button>
+      )}
       {(isMobile || fullscreen) && (
         <div style={styles.list}>
           <div style={styles.card}>
