@@ -22,7 +22,7 @@ function AboutMe({ fullscreen, handleFullscreenToggle }) {
     () => ({
       intro: {
         fontFamily: 'Roboto mono, mono',
-        width: '66%',
+        maxWidth: '66%',
         margin: '2rem auto 2rem auto',
         textAlign: 'justify',
         textAlignLast: 'justify',
