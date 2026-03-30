@@ -1,11 +1,17 @@
 import React from 'react';
 
-function NavItem({ active, title }) {
+function NavItem({ active, handleViewChange, title }) {
   const [hover, setHover] = React.useState(false);
 
   const handleMouseEnter = React.useCallback(() => setHover(true), []);
 
   const handleMouseLeave = React.useCallback(() => setHover(false), []);
+
+  // TODO: it would be cool if there was a slide transition to the next selected item eventually lol
+  const handleClick = React.useCallback(
+    () => handleViewChange(title),
+    [handleViewChange, title]
+  );
 
   const navItemStyle = React.useMemo(
     () => ({
@@ -35,6 +41,8 @@ function NavItem({ active, title }) {
       style={navItemStyle}
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
+      role="button"
+      onClick={handleClick}
     >
       {title}
     </li>

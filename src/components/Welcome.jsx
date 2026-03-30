@@ -43,8 +43,9 @@ const navStyle = {
         inset 0 1px 0 rgba(255, 255, 255, 0.2)`,
   transition: 'all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94)',
   position: 'absolute',
-  top: '80%',
-  left: '45%',
+  left: '50%',
+  transform: 'translateX(-50%)',
+  top: '82%',
   overflow: 'hidden',
   zIndex: 30,
 };
@@ -59,6 +60,11 @@ const navListStyle = {
 };
 
 function Welcome() {
+  const modalViews = React.useMemo(
+    () => ['Welcome', 'About Me', 'Last Played'],
+    []
+  );
+  const [selectedView, setSelectedView] = React.useState(modalViews[0]);
   const isMobile = useMediaQuery();
 
   const welcomeStyle = React.useMemo(
@@ -68,15 +74,20 @@ function Welcome() {
       flexDirection: 'column',
       alignItems: 'center',
       fontFamily: 'Raleway',
-      textJusitfy: 'inter-character',
+      textJustify: 'inter-character',
+      textAlign: 'center',
       fontSize: isMobile ? '2rem' : '3rem',
       paddingLeft: 20,
-      paddingRight: 40,
+      paddingRight: 20,
       marginTop: 0,
       marginBottom: 0,
     }),
     [isMobile]
   );
+
+  const handleViewChange = React.useCallback((view) => {
+    setSelectedView(view);
+  }, []);
 
   return (
     <React.Fragment>
@@ -87,17 +98,18 @@ function Welcome() {
             <span style={{ display: 'inline-block', width: '7ch' }}>
               <MorphingText words={['Josh', 'Masaaki', '将義']} />
             </span>
-            Thanks for checking out my page!
           </p>
+          <p>Thanks for checking out my page!</p>
         </div>
         <Window src={me} />
         we'll want to put the glassy nav bar below the modal for clarity
       </div>
       <div style={navStyle}>
         <ul style={navListStyle}>
-          <NavItem title="Welcome" active />
-          <NavItem title="About Me" />
-          <NavItem title="Last Played" />
+          {/* TODO: welcome is shifted to the right... */}
+          {modalViews.map((view) => (
+            <NavItem title={view} active={view === selectedView} />
+          ))}
         </ul>
       </div>
     </React.Fragment>

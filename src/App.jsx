@@ -2,6 +2,7 @@ import React from 'react';
 import MineSweeper from './components/mineSweeper/index.jsx';
 import Wave from 'react-wavify';
 
+import ModalView from './components/ModalView.jsx';
 import Welcome from './components/Welcome.jsx';
 
 import './App.css';
@@ -15,17 +16,20 @@ const fullViewport = {
 
 // TODO: add minesweeper to the background
 // TODO: scrape my steam last played games
+// TODO: add fireworks in the background, that would be cool lol
+// TODO: I think it would be cool to have a lil island beach thing in the middle or side
+// TODO: make sure to make github actions rebuild this every night so we can rerun the sync scripts for steam and maybe spotify!!
 function App() {
   return (
     <div style={fullViewport}>
-      {/* background */}
+      {/* background sun */}
       <div className="background-design">
         <div className="circle" />
         <div className="circle" />
         <div className="circle" />
       </div>
       {/* content */}
-      <Welcome />
+      <ModalView />
       {/* cool wave and ship animation lol */}
       <Wave
         fill="lightblue"

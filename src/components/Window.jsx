@@ -6,6 +6,7 @@ const imgStyle = {
   maxWidth: '100%',
   height: '100%',
   objectFit: 'cover',
+  width: '100%',
 };
 
 function Window({ src }) {
