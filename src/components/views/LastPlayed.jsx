@@ -94,7 +94,7 @@ function LastPlayed() {
             <img
               src={game.logo}
               style={styles.image}
-              img="image of game logo"
+              alt="image of game logo"
             />
             <div style={styles.info}>
               <a
