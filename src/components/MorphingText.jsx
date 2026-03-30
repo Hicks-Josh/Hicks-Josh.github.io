@@ -13,7 +13,7 @@ function MorphingText({ words, duration = 3000 }) {
   }, [words.length, duration]);
 
   return (
-    <div style={{ display: 'inline-block', position: 'relative' }}>
+    <div>
       <AnimatePresence mode="wait">
         <motion.div
           key={currentIndex}

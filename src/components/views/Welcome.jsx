@@ -14,29 +14,59 @@ function Welcome() {
       display: 'flex',
       justifyContent: 'center',
       flexDirection: 'column',
+      width: '100%',
       alignItems: 'center',
       fontFamily: 'Raleway',
-      textJustify: 'inter-character',
-      textAlign: 'center',
       fontSize: isMobile ? '2rem' : '3rem',
-      paddingLeft: 20,
-      paddingRight: 20,
-      marginTop: 0,
-      marginBottom: 0,
+      padding: '20 auto',
+      margin: '20 0',
+      justifyItems: 'center',
+      textAlign: 'justify',
+      textAlignLast: 'justify',
+      textJustify: 'inter-character',
+      wordSpacing: '0.05em',
     }),
     [isMobile]
   );
+
   return (
     <React.Fragment>
       <Window src={moominGif} />
       <div style={welcomeStyle}>
-        <p>
-          Hey, I'm{' '}
-          <span style={{ display: 'inline-block', width: '7ch' }}>
+        <p
+          style={{
+            lineHeight: 2,
+            width: '85%',
+            textAlign: 'justify',
+            textAlignLast: 'justify',
+            textJustify: 'inter-character',
+            margin: '0 auto',
+          }}
+        >
+          Oh hi there! I'm
+          {!isMobile && <br />}
+          <span
+            style={{
+              display: 'inline-block',
+              width: '100%',
+              whiteSpace: 'nowrap',
+            }}
+          >
             <MorphingText words={['Josh', 'Masaaki', '将義']} />
           </span>
         </p>
-        <p>Thanks for checking out my page!</p>
+        {isMobile && (
+          <React.Fragment>
+            <p style={{ lineHeight: -3, padding: 0, margin: 0 }}>~~~</p>
+            <p style={{ lineHeight: 2.5, width: '85%' }}>
+              Thanks for visiting,
+              <br />
+              I hope you don't mind
+              <br />
+              me sharing a bit of myself
+            </p>
+          </React.Fragment>
+        )}
       </div>
     </React.Fragment>
   );
