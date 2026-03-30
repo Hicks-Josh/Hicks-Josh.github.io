@@ -4,7 +4,7 @@ import MorphingText from '../MorphingText';
 import Window from '../Window';
 import useMediaQuery from '../../hooks/useMediaQuery';
 
-import moominGif from '../../assests/moomin.gif';
+import moominGif from '../../assets/moomin.gif';
 
 function Welcome() {
   const isMobile = useMediaQuery();
@@ -43,7 +43,7 @@ function Welcome() {
             margin: '0 auto',
           }}
         >
-          Oh hi there! I'm
+          Oh hi! I'm
           {!isMobile && <br />}
           <span
             style={{
@@ -61,9 +61,7 @@ function Welcome() {
             <p style={{ lineHeight: 2.5, width: '85%' }}>
               Thanks for visiting,
               <br />
-              I hope you don't mind
-              <br />
-              me sharing a bit of myself
+              Feel free to look around!
             </p>
           </React.Fragment>
         )}

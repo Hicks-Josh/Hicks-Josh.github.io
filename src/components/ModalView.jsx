@@ -10,8 +10,8 @@ import Window from './Window.jsx';
 import useMediaQuery from '../hooks/useMediaQuery.jsx';
 
 import steamData from '../steamData.json';
-import me from '../assests/me.webp';
-import moominGif from '../assests/moomin.gif';
+import me from '../assets/me.webp';
+import moominGif from '../assets/moomin.gif';
 
 const filterStyles = {
   backdropFilter: 'blur(10px)',
@@ -70,20 +70,27 @@ function ModalView() {
     () => ['Welcome', 'About Me', 'Last Played'],
     []
   );
+
+  const [fullscreen, setFullscreen] = React.useState(false);
   const [selectedView, setSelectedView] = React.useState(modalViews[0]);
   const isMobile = useMediaQuery();
+
+  const handleFullscreenToggle = React.useCallback(
+    () => setFullscreen((prev) => !prev),
+    []
+  );
 
   const modalStyle = React.useMemo(
     () => ({
       ...filterStyles,
       transform: 'translate(-50%, -50%)',
-      width: isMobile ? '100%' : '60%',
-      height: isMobile ? '100%' : '60%',
+      width: fullscreen || isMobile ? '100%' : '60%',
+      height: fullscreen || isMobile ? '100%' : '60%',
       position: 'absolute',
       top: '50%',
       left: '50%',
     }),
-    [isMobile]
+    [fullscreen, isMobile]
   );
 
   const handleViewChange = React.useCallback((view) => {
@@ -94,7 +101,12 @@ function ModalView() {
     <React.Fragment>
       <div style={modalStyle}>
         {selectedView === modalViews[0] && <Welcome />}
-        {selectedView === modalViews[1] && <AboutMe />}
+        {selectedView === modalViews[1] && (
+          <AboutMe
+            fullscreen={fullscreen}
+            handleFullscreenToggle={handleFullscreenToggle}
+          />
+        )}
         {selectedView === modalViews[2] && <LastPlayed />}
       </div>
       <div style={styles.nav.main}>
