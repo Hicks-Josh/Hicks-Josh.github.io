@@ -1,7 +1,10 @@
 import React from 'react';
 
+import AboutMe from './views/AboutMe.jsx';
 import MorphingText from './MorphingText.jsx';
 import NavItem from './NavItem.jsx';
+import LastPlayed from './views/LastPlayed.jsx';
+import Welcome from './views/Welcome.jsx';
 import Window from './Window.jsx';
 
 import useMediaQuery from '../hooks/useMediaQuery.jsx';
@@ -19,49 +22,40 @@ const filterStyles = {
   zIndex: 30,
 };
 
-const modalStyle = {
-  ...filterStyles,
-  transform: 'translate(-50%, -50%)',
-  width: '60%',
-  height: '60%',
-  position: 'absolute',
-  top: '50%',
-  left: '50%',
-};
-
-const navStyle = {
-  ...filterStyles,
-  height: '3rem',
-  width: '35%',
-  backdropFilter: 'blur(20px)',
-  border: '1px solid rgba(255, 255, 255, 0.2)',
-  borderRadius: '50px',
-  padding: '12px 25px',
-  display: 'flex',
-  alignItems: 'center',
-  justifyContent: 'center',
-  boxShadow: `
-        0 20px 40px rgba(0, 0, 0, 0.1),
-        inset 0 1px 0 rgba(255, 255, 255, 0.2)`,
-  transition: 'all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94)',
-  position: 'absolute',
-  left: '50%',
-  transform: 'translateX(-50%)',
-  top: '82%',
-  overflow: 'hidden',
-  zIndex: 30,
-};
-
-const navListStyle = {
-  display: 'flex',
-  alignItems: 'center',
-  gap: '5px',
-  listStyle: 'none',
-  zIndex: 2,
-  position: 'relative',
-};
-
 const styles = {
+  nav: {
+    main: {
+      ...filterStyles,
+      height: '3rem',
+      width: '35%',
+      backdropFilter: 'blur(20px)',
+      border: '1px solid rgba(255, 255, 255, 0.2)',
+      borderRadius: '50px',
+      padding: '12px 25px',
+      display: 'flex',
+      alignItems: 'center',
+      textAlign: 'center',
+      justifyContent: 'center',
+      boxShadow: `
+            0 20px 40px rgba(0, 0, 0, 0.1),
+            inset 0 1px 0 rgba(255, 255, 255, 0.2)`,
+      transition: 'all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94)',
+      position: 'absolute',
+      left: '50%',
+      transform: 'translateX(-50%)',
+      top: '82%',
+      overflow: 'hidden',
+      zIndex: 30,
+    },
+    list: {
+      display: 'flex',
+      alignItems: 'center',
+      gap: '5px',
+      listStyle: 'none',
+      zIndex: 2,
+      position: 'relative',
+    },
+  },
   lastPlayed: {
     intro: {
       fontFamily: 'Roboto mono, mono',
@@ -77,7 +71,7 @@ const styles = {
       fontFamily: 'Roboto Mono, mono',
       fontSize: '0.75rem',
       position: 'absolute',
-      bottom: 0,
+      bottom: -15,
       left: '50%',
       transform: 'translate(-50%)',
       padding: 20,
@@ -88,10 +82,13 @@ const styles = {
     },
     list: {
       display: 'flex',
+      position: 'relative',
       flexDirection: 'column',
       gap: '1.5rem',
       width: '80%',
       margin: '0 auto',
+      top: -130,
+      zIndex: -10,
     },
     card: (index) => ({
       ...filterStyles,
@@ -129,20 +126,15 @@ function ModalView() {
   const [selectedView, setSelectedView] = React.useState(modalViews[0]);
   const isMobile = useMediaQuery();
 
-  const welcomeStyle = React.useMemo(
+  const modalStyle = React.useMemo(
     () => ({
-      display: 'flex',
-      justifyContent: 'center',
-      flexDirection: 'column',
-      alignItems: 'center',
-      fontFamily: 'Raleway',
-      textJustify: 'inter-character',
-      textAlign: 'center',
-      fontSize: isMobile ? '2rem' : '3rem',
-      paddingLeft: 20,
-      paddingRight: 20,
-      marginTop: 0,
-      marginBottom: 0,
+      ...filterStyles,
+      transform: 'translate(-50%, -50%)',
+      width: isMobile ? '100%' : '60%',
+      height: isMobile ? '100%' : '60%',
+      position: 'absolute',
+      top: '50%',
+      left: '50%',
     }),
     [isMobile]
   );
@@ -154,62 +146,12 @@ function ModalView() {
   return (
     <React.Fragment>
       <div style={modalStyle}>
-        {selectedView === modalViews[0] && (
-          <React.Fragment>
-            <div style={welcomeStyle}>
-              <p>
-                Hey, I'm{' '}
-                <span style={{ display: 'inline-block', width: '7ch' }}>
-                  <MorphingText words={['Josh', 'Masaaki', '将義']} />
-                </span>
-              </p>
-              <p>Thanks for checking out my page!</p>
-            </div>
-            <Window src={moominGif} />
-          </React.Fragment>
-        )}
-        {selectedView === modalViews[1] && (
-          <React.Fragment>
-            yo
-            <p>test</p>
-            <Window src={me} />
-          </React.Fragment>
-        )}
-        {selectedView === modalViews[2] && (
-          <React.Fragment>
-            <p style={styles.lastPlayed.intro}>
-              If I'm not coding then I'm probably playing some games; here's the
-              last three games I played:
-            </p>
-            <div style={styles.lastPlayed.list}>
-              {steamData.parsedGames.map((game, index) => (
-                <div style={styles.lastPlayed.card(index)} key={game.name}>
-                  <img src={game.logo} style={styles.lastPlayed.image} />
-                  <div style={styles.lastPlayed.info}>
-                    <a
-                      href={game.link}
-                      target="_blank"
-                      style={styles.lastPlayed.link}
-                    >
-                      {game.name}
-                    </a>
-                    <span style={styles.lastPlayed.hours}>
-                      {game.hoursOnRecord} hours on record
-                    </span>
-                  </div>
-                </div>
-              ))}
-            </div>
-            <p style={styles.lastPlayed.introSub}>
-              (this is a front end application, so I just resync the data every
-              night, oh no it's not 100% accurate! 😨)
-            </p>
-            <Window src={steamData?.profilePicture} />
-          </React.Fragment>
-        )}
+        {selectedView === modalViews[0] && <Welcome />}
+        {selectedView === modalViews[1] && <AboutMe />}
+        {selectedView === modalViews[2] && <LastPlayed />}
       </div>
-      <div style={navStyle}>
-        <ul style={navListStyle}>
+      <div style={styles.nav.main}>
+        <ul style={styles.nav.list}>
           {/* TODO: welcome is shifted to the right... */}
           {modalViews.map((view) => (
             <NavItem

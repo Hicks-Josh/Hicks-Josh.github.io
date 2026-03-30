@@ -14,19 +14,18 @@ function Window({ src }) {
 
   const windowStyle = React.useMemo(
     () => ({
-      position: 'absolute',
-      height: isMobile ? '150px' : '250px',
+      float: 'right',
+      shapeOutside: 'circle(50%)',
       width: isMobile ? '150px' : '250px',
-      top: isMobile ? '-8%' : '-20%',
-      right: isMobile ? '-10%' : '-22%',
+      height: isMobile ? '150px' : '250px',
       borderRadius: '50%',
-      zIndex: 40,
-      background: 'rgba(255, 255, 255, 0.5)',
-      backdropFilter: 'blur(10px)',
-      webkitBackdropFilter: 'blur(10px)',
-      boxShadow: '0 2px 10px 0 rgba(0,0,0,0.2)',
-      transition: 'all 1s',
+      marginLeft: '1rem',
+      marginBottom: '1rem',
       overflow: 'hidden',
+      objectFit: 'cover',
+      boxShadow: '0 2px 10px rgba(0,0,0,0.2)',
+      transition: 'all 1s',
+      zIndex: 40,
     }),
     [isMobile]
   );

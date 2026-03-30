@@ -3,7 +3,6 @@ import MineSweeper from './components/mineSweeper/index.jsx';
 import Wave from 'react-wavify';
 
 import ModalView from './components/ModalView.jsx';
-import Welcome from './components/Welcome.jsx';
 
 import './App.css';
 

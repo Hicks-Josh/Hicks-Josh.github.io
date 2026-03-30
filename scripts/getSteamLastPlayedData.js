@@ -13,7 +13,8 @@ const parseSteamData = (steamData) => {
   const parser = new DOMParser();
   const document = parser.parseFromString(steamData, 'text/xml');
 
-  const profilePicture = document.getElementsByTagName('avatarFull')[0].textContent;
+  const profilePicture =
+    document.getElementsByTagName('avatarFull')[0].textContent;
   const [games] = Array.from(document.getElementsByTagName('mostPlayedGames'));
 
   const parsedGames = [];
