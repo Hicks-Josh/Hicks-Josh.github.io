@@ -14,13 +14,7 @@
       "logoSmall": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/230410/80dd2d83df77e9037b14b0076713d2e63666192d/capsule_184x69.jpg?t=1775661175",
       "hoursOnRecord": "3,605"
     },
-    {
-      "name": "The Elder Scrolls V: Skyrim Special Edition",
-      "link": "https://steamcommunity.com/app/489830",
-      "logo": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/489830/capsule_184x69.jpg?t=1753715778",
-      "logoSmall": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/489830/capsule_184x69.jpg?t=1753715778",
-      "hoursOnRecord": "1,070"
-    }
+    {}
   ],
   "profilePicture": "https://avatars.akamai.steamstatic.com/37cf1dc1f48ac849fb89a0b11182816609a9e6eb_full.jpg"
 }
