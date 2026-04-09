@@ -20,11 +20,11 @@ const parseSteamData = (steamData) => {
   const parsedGames = [];
   for (let i = 0; i < 3; i += 1) {
     parsedGames.push({
-      name: games.getElementsByTagName('gameName')[i].textContent,
-      link: games.getElementsByTagName('gameLink')[i].textContent,
-      logo: games.getElementsByTagName('gameLogo')[i].textContent,
-      logoSmall: games.getElementsByTagName('gameLogoSmall')[i].textContent,
-      hoursOnRecord: games.getElementsByTagName('hoursOnRecord')[i].textContent,
+      name: games.getElementsByTagName('gameName')[i]?.textContent,
+      link: games.getElementsByTagName('gameLink')[i]?.textContent,
+      logo: games.getElementsByTagName('gameLogo')[i]?.textContent,
+      logoSmall: games.getElementsByTagName('gameLogoSmall')[i]?.textContent,
+      hoursOnRecord: games.getElementsByTagName('hoursOnRecord')[i]?.textContent,
     });
   }
 
