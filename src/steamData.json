@@ -3,24 +3,24 @@
     {
       "name": "Path of Exile",
       "link": "https://steamcommunity.com/app/238960",
-      "logo": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/238960/c383e49c3e2e9c93433c847be28dbfb57a51615d/capsule_184x69.jpg?t=1773177577",
-      "logoSmall": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/238960/c383e49c3e2e9c93433c847be28dbfb57a51615d/capsule_184x69.jpg?t=1773177577",
-      "hoursOnRecord": "42"
+      "logo": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/238960/c383e49c3e2e9c93433c847be28dbfb57a51615d/capsule_184x69.jpg?t=1773177577",
+      "logoSmall": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/238960/c383e49c3e2e9c93433c847be28dbfb57a51615d/capsule_184x69.jpg?t=1773177577",
+      "hoursOnRecord": "44"
     },
     {
       "name": "Warframe",
       "link": "https://steamcommunity.com/app/230410",
-      "logo": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/230410/80dd2d83df77e9037b14b0076713d2e63666192d/capsule_184x69.jpg?t=1775661175",
-      "logoSmall": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/230410/80dd2d83df77e9037b14b0076713d2e63666192d/capsule_184x69.jpg?t=1775661175",
+      "logo": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/230410/80dd2d83df77e9037b14b0076713d2e63666192d/capsule_184x69.jpg?t=1775661175",
+      "logoSmall": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/230410/80dd2d83df77e9037b14b0076713d2e63666192d/capsule_184x69.jpg?t=1775661175",
       "hoursOnRecord": "3,607"
     },
     {
       "name": "Path of Exile 2",
       "link": "https://steamcommunity.com/app/2694490",
-      "logo": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2694490/bd1e04c85b485f61a628063c7cdbf4eec8abd7dc/capsule_184x69.jpg?t=1770195127",
-      "logoSmall": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2694490/bd1e04c85b485f61a628063c7cdbf4eec8abd7dc/capsule_184x69.jpg?t=1770195127",
+      "logo": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2694490/bd1e04c85b485f61a628063c7cdbf4eec8abd7dc/capsule_184x69.jpg?t=1770195127",
+      "logoSmall": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2694490/bd1e04c85b485f61a628063c7cdbf4eec8abd7dc/capsule_184x69.jpg?t=1770195127",
       "hoursOnRecord": "282"
     }
   ],
-  "profilePicture": "https://avatars.fastly.steamstatic.com/37cf1dc1f48ac849fb89a0b11182816609a9e6eb_full.jpg"
+  "profilePicture": "https://avatars.akamai.steamstatic.com/37cf1dc1f48ac849fb89a0b11182816609a9e6eb_full.jpg"
 }
