@@ -3,24 +3,24 @@
     {
       "name": "Path of Exile",
       "link": "https://steamcommunity.com/app/238960",
-      "logo": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/238960/c383e49c3e2e9c93433c847be28dbfb57a51615d/capsule_184x69.jpg?t=1773177577",
-      "logoSmall": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/238960/c383e49c3e2e9c93433c847be28dbfb57a51615d/capsule_184x69.jpg?t=1773177577",
-      "hoursOnRecord": "48"
+      "logo": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/238960/c383e49c3e2e9c93433c847be28dbfb57a51615d/capsule_184x69.jpg?t=1773177577",
+      "logoSmall": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/238960/c383e49c3e2e9c93433c847be28dbfb57a51615d/capsule_184x69.jpg?t=1773177577",
+      "hoursOnRecord": "52"
     },
     {
       "name": "Heroes of Hammerwatch II",
       "link": "https://steamcommunity.com/app/619820",
-      "logo": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/619820/0cae9730d039755164a09c200c394e47c468135f/capsule_184x69.jpg?t=1776718787",
-      "logoSmall": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/619820/0cae9730d039755164a09c200c394e47c468135f/capsule_184x69.jpg?t=1776718787",
+      "logo": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/619820/0cae9730d039755164a09c200c394e47c468135f/capsule_184x69.jpg?t=1776718787",
+      "logoSmall": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/619820/0cae9730d039755164a09c200c394e47c468135f/capsule_184x69.jpg?t=1776718787",
       "hoursOnRecord": "13.0"
     },
     {
       "name": "The Elder Scrolls IV: Oblivion Remastered",
       "link": "https://steamcommunity.com/app/2623190",
-      "logo": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2623190/4efc3257aabd776d4624da40146fb021d1ef5b38/capsule_184x69.jpg?t=1761681073",
-      "logoSmall": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2623190/4efc3257aabd776d4624da40146fb021d1ef5b38/capsule_184x69.jpg?t=1761681073",
+      "logo": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2623190/4efc3257aabd776d4624da40146fb021d1ef5b38/capsule_184x69.jpg?t=1761681073",
+      "logoSmall": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2623190/4efc3257aabd776d4624da40146fb021d1ef5b38/capsule_184x69.jpg?t=1761681073",
       "hoursOnRecord": "8.8"
     }
   ],
-  "profilePicture": "https://avatars.akamai.steamstatic.com/37cf1dc1f48ac849fb89a0b11182816609a9e6eb_full.jpg"
+  "profilePicture": "https://avatars.fastly.steamstatic.com/37cf1dc1f48ac849fb89a0b11182816609a9e6eb_full.jpg"
 }
