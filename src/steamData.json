@@ -5,7 +5,14 @@
       "link": "https://steamcommunity.com/app/230410",
       "logo": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/230410/80dd2d83df77e9037b14b0076713d2e63666192d/capsule_184x69.jpg?t=1777993769",
       "logoSmall": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/230410/80dd2d83df77e9037b14b0076713d2e63666192d/capsule_184x69.jpg?t=1777993769",
-      "hoursOnRecord": "3,614"
+      "hoursOnRecord": "3,622"
+    },
+    {
+      "name": "Starfield",
+      "link": "https://steamcommunity.com/app/1716740",
+      "logo": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1716740/capsule_184x69.jpg?t=1778168061",
+      "logoSmall": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1716740/capsule_184x69.jpg?t=1778168061",
+      "hoursOnRecord": "96"
     },
     {
       "name": "Path of Exile",
@@ -13,13 +20,6 @@
       "logo": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/238960/c383e49c3e2e9c93433c847be28dbfb57a51615d/capsule_184x69.jpg?t=1773177577",
       "logoSmall": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/238960/c383e49c3e2e9c93433c847be28dbfb57a51615d/capsule_184x69.jpg?t=1773177577",
       "hoursOnRecord": "54"
-    },
-    {
-      "name": "Starfield",
-      "link": "https://steamcommunity.com/app/1716740",
-      "logo": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1716740/capsule_184x69.jpg?t=1778168061",
-      "logoSmall": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1716740/capsule_184x69.jpg?t=1778168061",
-      "hoursOnRecord": "95"
     }
   ],
   "profilePicture": "https://avatars.fastly.steamstatic.com/37cf1dc1f48ac849fb89a0b11182816609a9e6eb_full.jpg"
