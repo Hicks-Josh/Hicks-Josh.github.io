@@ -1,6 +1,13 @@
 {
   "parsedGames": [
     {
+      "name": "Path of Exile 2",
+      "link": "https://steamcommunity.com/app/2694490",
+      "logo": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2694490/bae62b5ac9eeb900458e3f6c089bf5df3eb923c9/capsule_184x69.jpg?t=1779752119",
+      "logoSmall": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2694490/bae62b5ac9eeb900458e3f6c089bf5df3eb923c9/capsule_184x69.jpg?t=1779752119",
+      "hoursOnRecord": "301"
+    },
+    {
       "name": "Warframe",
       "link": "https://steamcommunity.com/app/230410",
       "logo": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/230410/80dd2d83df77e9037b14b0076713d2e63666192d/capsule_184x69.jpg?t=1778595605",
@@ -13,13 +20,6 @@
       "logo": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1716740/capsule_184x69.jpg?t=1778168061",
       "logoSmall": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1716740/capsule_184x69.jpg?t=1778168061",
       "hoursOnRecord": "113"
-    },
-    {
-      "name": "Path of Exile 2",
-      "link": "https://steamcommunity.com/app/2694490",
-      "logo": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2694490/bae62b5ac9eeb900458e3f6c089bf5df3eb923c9/capsule_184x69.jpg?t=1779752119",
-      "logoSmall": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2694490/bae62b5ac9eeb900458e3f6c089bf5df3eb923c9/capsule_184x69.jpg?t=1779752119",
-      "hoursOnRecord": "292"
     }
   ],
   "profilePicture": "https://avatars.fastly.steamstatic.com/37cf1dc1f48ac849fb89a0b11182816609a9e6eb_full.jpg"
