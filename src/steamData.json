@@ -3,18 +3,24 @@
     {
       "name": "The Elder Scrolls V: Skyrim Special Edition",
       "link": "https://steamcommunity.com/app/489830",
-      "logo": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/489830/capsule_184x69.jpg?t=1753715778",
-      "logoSmall": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/489830/capsule_184x69.jpg?t=1753715778",
-      "hoursOnRecord": "1,075"
+      "logo": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/489830/capsule_184x69.jpg?t=1753715778",
+      "logoSmall": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/489830/capsule_184x69.jpg?t=1753715778",
+      "hoursOnRecord": "1,077"
+    },
+    {
+      "name": "Warframe",
+      "link": "https://steamcommunity.com/app/230410",
+      "logo": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/230410/e0b104aeb9dc8c563cacc84b114bc48ba416f28e/capsule_184x69.jpg?t=1783354915",
+      "logoSmall": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/230410/e0b104aeb9dc8c563cacc84b114bc48ba416f28e/capsule_184x69.jpg?t=1783354915",
+      "hoursOnRecord": "3,658"
     },
     {
       "name": "Path of Exile 2",
       "link": "https://steamcommunity.com/app/2694490",
-      "logo": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2694490/bae62b5ac9eeb900458e3f6c089bf5df3eb923c9/capsule_184x69.jpg?t=1781573777",
-      "logoSmall": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2694490/bae62b5ac9eeb900458e3f6c089bf5df3eb923c9/capsule_184x69.jpg?t=1781573777",
+      "logo": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2694490/bae62b5ac9eeb900458e3f6c089bf5df3eb923c9/capsule_184x69.jpg?t=1781573777",
+      "logoSmall": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2694490/bae62b5ac9eeb900458e3f6c089bf5df3eb923c9/capsule_184x69.jpg?t=1781573777",
       "hoursOnRecord": "399"
-    },
-    {}
+    }
   ],
-  "profilePicture": "https://avatars.fastly.steamstatic.com/37cf1dc1f48ac849fb89a0b11182816609a9e6eb_full.jpg"
+  "profilePicture": "https://avatars.akamai.steamstatic.com/37cf1dc1f48ac849fb89a0b11182816609a9e6eb_full.jpg"
 }
