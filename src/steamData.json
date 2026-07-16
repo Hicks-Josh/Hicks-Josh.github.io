@@ -1,26 +1,26 @@
 {
   "parsedGames": [
     {
-      "name": "The Elder Scrolls V: Skyrim Special Edition",
-      "link": "https://steamcommunity.com/app/489830",
-      "logo": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/489830/capsule_184x69.jpg?t=1753715778",
-      "logoSmall": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/489830/capsule_184x69.jpg?t=1753715778",
-      "hoursOnRecord": "1,078"
-    },
-    {
       "name": "Warframe",
       "link": "https://steamcommunity.com/app/230410",
-      "logo": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/230410/e0b104aeb9dc8c563cacc84b114bc48ba416f28e/capsule_184x69.jpg?t=1783809792",
-      "logoSmall": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/230410/e0b104aeb9dc8c563cacc84b114bc48ba416f28e/capsule_184x69.jpg?t=1783809792",
-      "hoursOnRecord": "3,663"
+      "logo": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/230410/e0b104aeb9dc8c563cacc84b114bc48ba416f28e/capsule_184x69.jpg?t=1783809792",
+      "logoSmall": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/230410/e0b104aeb9dc8c563cacc84b114bc48ba416f28e/capsule_184x69.jpg?t=1783809792",
+      "hoursOnRecord": "3,665"
+    },
+    {
+      "name": "The Elder Scrolls V: Skyrim Special Edition",
+      "link": "https://steamcommunity.com/app/489830",
+      "logo": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/489830/capsule_184x69.jpg?t=1753715778",
+      "logoSmall": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/489830/capsule_184x69.jpg?t=1753715778",
+      "hoursOnRecord": "1,078"
     },
     {
       "name": "Stardew Valley",
       "link": "https://steamcommunity.com/app/413150",
-      "logo": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/413150/capsule_184x69.jpg?t=1754692865",
-      "logoSmall": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/413150/capsule_184x69.jpg?t=1754692865",
+      "logo": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/413150/capsule_184x69.jpg?t=1754692865",
+      "logoSmall": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/413150/capsule_184x69.jpg?t=1754692865",
       "hoursOnRecord": "18.4"
     }
   ],
-  "profilePicture": "https://avatars.akamai.steamstatic.com/37cf1dc1f48ac849fb89a0b11182816609a9e6eb_full.jpg"
+  "profilePicture": "https://avatars.fastly.steamstatic.com/37cf1dc1f48ac849fb89a0b11182816609a9e6eb_full.jpg"
 }
