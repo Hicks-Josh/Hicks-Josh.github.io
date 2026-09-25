@@ -1,18 +1,18 @@
 {
   "parsedGames": [
     {
-      "name": "Warframe",
-      "link": "https://steamcommunity.com/app/230410",
-      "logo": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/230410/61226446133ca3229607bbc1b5cd386a85b7902c/capsule_184x69.jpg?t=1790176468",
-      "logoSmall": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/230410/61226446133ca3229607bbc1b5cd386a85b7902c/capsule_184x69.jpg?t=1790176468",
-      "hoursOnRecord": "3,739"
-    },
-    {
       "name": "Path of Exile 2",
       "link": "https://steamcommunity.com/app/2694490",
       "logo": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2694490/bae62b5ac9eeb900458e3f6c089bf5df3eb923c9/capsule_184x69.jpg?t=1787697213",
       "logoSmall": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2694490/bae62b5ac9eeb900458e3f6c089bf5df3eb923c9/capsule_184x69.jpg?t=1787697213",
       "hoursOnRecord": "427"
+    },
+    {
+      "name": "Warframe",
+      "link": "https://steamcommunity.com/app/230410",
+      "logo": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/230410/61226446133ca3229607bbc1b5cd386a85b7902c/capsule_184x69.jpg?t=1790176468",
+      "logoSmall": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/230410/61226446133ca3229607bbc1b5cd386a85b7902c/capsule_184x69.jpg?t=1790176468",
+      "hoursOnRecord": "3,740"
     },
     {
       "name": "Balatro",
