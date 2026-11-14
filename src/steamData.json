@@ -14,7 +14,13 @@
       "logoSmall": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2694490/1045360d7ccbcaf236ca2e662786ec537f4b965f/capsule_184x69.jpg?t=1794430489",
       "hoursOnRecord": "441"
     },
-    {}
+    {
+      "name": "Path of Exile",
+      "link": "https://steamcommunity.com/app/238960",
+      "logo": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/238960/36db623d3337b00788bc28606d926e2a4fbefab0/capsule_184x69.jpg?t=1794430224",
+      "logoSmall": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/238960/36db623d3337b00788bc28606d926e2a4fbefab0/capsule_184x69.jpg?t=1794430224",
+      "hoursOnRecord": "86"
+    }
   ],
   "profilePicture": "https://avatars.fastly.steamstatic.com/2992ae1bbb54aa960ffdaa0890f7f12a4532a43f_full.jpg"
 }
